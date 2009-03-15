@@ -1,23 +1,23 @@
 <p>
-  <b>Title:</b>
+  <b><%= t ".title" %>:</b>
   <%=h @book.title %>
 </p>
 
 <p>
-  <b>Price:</b>
+  <b><%= t ".price" %>:</b>
   <%=  number_to_currency @book.price %><br />
 </p>
 
 <p>
-  <b>Published at:</b>
+  <b><%= t "common.published_at" %>:</b>
   <%=l @book.published_at, :format => :long %>
 </p>
 
 <p>
-  <b>Created at:</b>
+  <b><%= t "common.created_at" %>:</b>
   <%=l @book.created_at, :format => :long %>
 </p>
 
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to t('common.edit'), edit_book_path(@book) %> |
+<%= link_to t('common.back'), books_path %>

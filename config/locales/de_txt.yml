@@ -1,0 +1,13 @@
+de:
+  books:
+    show:
+      title: Titel
+      price: Preis
+  common:
+    hello_world: Hallo Welt
+    title: Titel
+    price: Preis
+    published_at: Erschienen am
+    created_at: Angelegt am
+    edit: Bearbeiten
+    back: Zurück
