@@ -1,0 +1,2264 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090314063307)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090314063307)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090314063444)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090314063444')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("products")[0m
+  [4;36;1mProduct Create (0.6ms)[0m   [0;1mINSERT INTO "products" ("updated_at", "title", "price", "created_at") VALUES('2009-03-14 06:37:38', 'Ball', 29.4, '2009-03-14 06:37:38')[0m
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" ORDER BY products.id DESC LIMIT 1[0m
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM "products" ORDER BY products.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090314064652)
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090314064652')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("products")[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-03-14 07:47:33) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 119ms (View: 113, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2009-03-14 07:47:36) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/products/new]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2009-03-14 07:47:44) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"EANGr0ElKWgy7SUgm20OSHh6IpFrxDPN6b28Gq9PyS0=", "product"=>{"price"=>"29,45", "title"=>"Ball"}}
+  [4;35;1mProduct Create (0.6ms)[0m   [0mINSERT INTO "products" ("updated_at", "title", "price", "created_at") VALUES('2009-03-14 06:47:44', 'Ball', 29.0, '2009-03-14 06:47:44')[0m
+Redirected to http://localhost:3000/products/1
+Completed in 21ms (DB: 1) | 302 Found [http://localhost/products]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-03-14 07:47:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/products/1]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20090314065513)
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "price" decimal, "published_at" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090314065513')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("books")[0m
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-03-14 07:56:00) [GET]
+  [4;36;1mBook Load (0.5ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 07:56:04) [GET]
+Rendering template within layouts/books
+Rendering books/new
+
+ActionView::TemplateError (can't convert Symbol into String) on line #16 of app/views/books/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :published_at %><br />
+16:     <%= f.date_select :published_at %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:620:in `include?'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:620:in `select_date'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:907:in `to_date_select_tag_without_error_wrapping'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/active_record_helper.rb:268:in `to_date_select_tag'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:186:in `date_select'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:964:in `date_select'
+    app/views/books/new.html.erb:16
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:490:in `fields_for'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:282:in `form_for'
+    app/views/books/new.html.erb:3
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:29:in `new'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (53.7ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 07:58:56) [GET]
+
+ArgumentError (syntax error on line 119, col 13: `'):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:189:in `load_yml'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `send'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `load_file'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `each'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:85:in `init_translations'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:74:in `available_locales'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n.rb:50:in `available_locales'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:215:in `valid_locale?'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:234:in `split'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:113:in `initialize'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:81:in `initialize'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:38:in `new'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:38:in `register_template_from_file'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:62:in `load_all_templates_from_dir'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:62:in `each'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:62:in `load_all_templates_from_dir'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:29:in `[]'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/paths.rb:48:in `find_template'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/paths.rb:47:in `each'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/paths.rb:47:in `find_template'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1376:in `default_template'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/layout.rb:260:in `candidate_for_layout?'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/layout.rb:240:in `pick_layout'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:913:in `render_without_benchmark'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+  app/controllers/books_controller.rb:29:in `new'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+  /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (136.9ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 07:58:58) [GET]
+
+ArgumentError (syntax error on line 119, col 13: `'):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:189:in `load_yml'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `send'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `load_file'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `each'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:85:in `init_translations'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:74:in `available_locales'
+  /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n.rb:50:in `available_locales'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:215:in `valid_locale?'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:234:in `split'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:113:in `initialize'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:81:in `initialize'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:38:in `new'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:38:in `register_template_from_file'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:62:in `load_all_templates_from_dir'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:62:in `each'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:62:in `load_all_templates_from_dir'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/reloadable_template.rb:29:in `[]'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/paths.rb:48:in `find_template'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/paths.rb:47:in `each'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/paths.rb:47:in `find_template'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1376:in `default_template'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/layout.rb:260:in `candidate_for_layout?'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/layout.rb:240:in `pick_layout'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:913:in `render_without_benchmark'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+  app/controllers/books_controller.rb:29:in `new'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+  /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (64.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 07:59:33) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 231ms (View: 226, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 07:59:41) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 07:59:45) [GET]
+Rendering template within layouts/books
+Rendering books/new
+
+ActionView::TemplateError (syntax error on line 119, col 13: `.rb:173:in `e') on line #16 of app/views/books/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :published_at %><br />
+16:     <%= f.date_select :published_at %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:189:in `load_yml'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `load_file'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:85:in `init_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:100:in `lookup'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:33:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n.rb:165:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:779:in `translated_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:773:in `_unmemoized_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/memoizable.rb:71:in `date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:612:in `select_date'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:907:in `to_date_select_tag_without_error_wrapping'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/active_record_helper.rb:268:in `to_date_select_tag'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:186:in `date_select'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:964:in `date_select'
+    app/views/books/new.html.erb:16
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:490:in `fields_for'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:282:in `form_for'
+    app/views/books/new.html.erb:3
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:29:in `new'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (159.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 07:59:51) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 07:59:57) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 07:59:58) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 07:59:59) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 08:00:17) [GET]
+Rendering template within layouts/books
+Rendering books/new
+
+ActionView::TemplateError (syntax error on line 119, col 13: `y/1.8/gems/ac') on line #16 of app/views/books/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :published_at %><br />
+16:     <%= f.date_select :published_at %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:189:in `load_yml'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `load_file'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:85:in `init_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:100:in `lookup'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:33:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n.rb:165:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:779:in `translated_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:773:in `_unmemoized_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/memoizable.rb:71:in `date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:612:in `select_date'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:907:in `to_date_select_tag_without_error_wrapping'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/active_record_helper.rb:268:in `to_date_select_tag'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:186:in `date_select'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:964:in `date_select'
+    app/views/books/new.html.erb:16
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:490:in `fields_for'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:282:in `form_for'
+    app/views/books/new.html.erb:3
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:29:in `new'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (63.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 08:00:40) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 08:00:44) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 08:00:52) [GET]
+Rendering template within layouts/books
+Rendering books/new
+
+ActionView::TemplateError (syntax error on line 119, col 13: `') on line #16 of app/views/books/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :published_at %><br />
+16:     <%= f.date_select :published_at %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:189:in `load_yml'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `load_file'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:85:in `init_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:100:in `lookup'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:33:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n.rb:165:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:779:in `translated_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:773:in `_unmemoized_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/memoizable.rb:71:in `date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:612:in `select_date'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:907:in `to_date_select_tag_without_error_wrapping'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/active_record_helper.rb:268:in `to_date_select_tag'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:186:in `date_select'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:964:in `date_select'
+    app/views/books/new.html.erb:16
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:490:in `fields_for'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:282:in `form_for'
+    app/views/books/new.html.erb:3
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:29:in `new'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (61.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 08:00:54) [GET]
+Rendering template within layouts/books
+Rendering books/new
+
+ActionView::TemplateError (syntax error on line 119, col 13: `') on line #16 of app/views/books/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :published_at %><br />
+16:     <%= f.date_select :published_at %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:189:in `load_yml'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `load_file'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:85:in `init_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:100:in `lookup'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:33:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n.rb:165:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:779:in `translated_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:773:in `_unmemoized_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/memoizable.rb:71:in `date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:612:in `select_date'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:907:in `to_date_select_tag_without_error_wrapping'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/active_record_helper.rb:268:in `to_date_select_tag'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:186:in `date_select'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:964:in `date_select'
+    app/views/books/new.html.erb:16
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:490:in `fields_for'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:282:in `form_for'
+    app/views/books/new.html.erb:3
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:29:in `new'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (62.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 08:00:56) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 08:01:08) [GET]
+Rendering template within layouts/books
+Rendering books/new
+
+ActionView::TemplateError (syntax error on line 119, col 13: `') on line #16 of app/views/books/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :published_at %><br />
+16:     <%= f.date_select :published_at %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:189:in `load_yml'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `load_file'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:85:in `init_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:100:in `lookup'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:33:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n.rb:165:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:779:in `translated_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:773:in `_unmemoized_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/memoizable.rb:71:in `date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:612:in `select_date'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:907:in `to_date_select_tag_without_error_wrapping'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/active_record_helper.rb:268:in `to_date_select_tag'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:186:in `date_select'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:964:in `date_select'
+    app/views/books/new.html.erb:16
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:490:in `fields_for'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:282:in `form_for'
+    app/views/books/new.html.erb:3
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:29:in `new'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (65.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 08:02:06) [GET]
+Rendering template within layouts/books
+Rendering books/new
+
+ActionView::TemplateError (syntax error on line 119, col 13: `names: [~, Ja') on line #16 of app/views/books/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :published_at %><br />
+16:     <%= f.date_select :published_at %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:189:in `load_yml'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `load_file'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:85:in `init_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:100:in `lookup'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:33:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n.rb:165:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:779:in `translated_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:773:in `_unmemoized_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/memoizable.rb:71:in `date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:612:in `select_date'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:907:in `to_date_select_tag_without_error_wrapping'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/active_record_helper.rb:268:in `to_date_select_tag'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:186:in `date_select'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:964:in `date_select'
+    app/views/books/new.html.erb:16
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:490:in `fields_for'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:282:in `form_for'
+    app/views/books/new.html.erb:3
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:29:in `new'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (62.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 08:02:07) [GET]
+Rendering template within layouts/books
+Rendering books/new
+
+ActionView::TemplateError (syntax error on line 119, col 13: `') on line #16 of app/views/books/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :published_at %><br />
+16:     <%= f.date_select :published_at %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:189:in `load_yml'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:176:in `load_file'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:13:in `load_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:85:in `init_translations'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:100:in `lookup'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:33:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n.rb:165:in `translate'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:779:in `translated_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:773:in `_unmemoized_date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/memoizable.rb:71:in `date_order'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:612:in `select_date'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:907:in `to_date_select_tag_without_error_wrapping'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/active_record_helper.rb:268:in `to_date_select_tag'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:186:in `date_select'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/date_helper.rb:964:in `date_select'
+    app/views/books/new.html.erb:16
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:490:in `fields_for'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/form_helper.rb:282:in `form_for'
+    app/views/books/new.html.erb:3
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:29:in `new'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (144.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-14 08:02:14) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-03-14 08:02:17) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"EANGr0ElKWgy7SUgm20OSHh6IpFrxDPN6b28Gq9PyS0=", "book"=>{"price"=>"", "title"=>"", "published_at(1i)"=>"2009", "published_at(2i)"=>"3", "published_at(3i)"=>"14"}}
+Rendering template within layouts/books
+Rendering books/new
+Completed in 17ms (View: 5, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-03-14 08:02:31) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"EANGr0ElKWgy7SUgm20OSHh6IpFrxDPN6b28Gq9PyS0=", "book"=>{"price"=>"", "title"=>"", "published_at(1i)"=>"2009", "published_at(2i)"=>"3", "published_at(3i)"=>"14"}}
+Rendering template within layouts/books
+Rendering books/new
+Completed in 23ms (View: 5, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-03-14 08:02:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"EANGr0ElKWgy7SUgm20OSHh6IpFrxDPN6b28Gq9PyS0=", "book"=>{"price"=>"", "title"=>"", "published_at(1i)"=>"2009", "published_at(2i)"=>"3", "published_at(3i)"=>"14"}}
+Rendering template within layouts/books
+Rendering books/new
+Completed in 21ms (View: 5, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-03-14 11:03:18) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"EANGr0ElKWgy7SUgm20OSHh6IpFrxDPN6b28Gq9PyS0=", "book"=>{"price"=>"29.40", "title"=>"Im Norden nichts neues", "published_at(1i)"=>"2006", "published_at(2i)"=>"2", "published_at(3i)"=>"10"}}
+  [4;36;1mBook Create (0.6ms)[0m   [0;1mINSERT INTO "books" ("updated_at", "title", "price", "published_at", "created_at") VALUES('2009-03-14 10:03:18', 'Im Norden nichts neues', 29.4, '2006-02-10', '2009-03-14 10:03:18')[0m
+Redirected to http://localhost:3000/books/1
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-14 11:03:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 107ms (View: 101, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2009-03-14 11:03:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/edit
+Completed in 30ms (View: 24, DB: 0) | 200 OK [http://localhost/books/1/edit]
+
+
+Processing BooksController#update (for 127.0.0.1 at 2009-03-14 11:03:32) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"EANGr0ElKWgy7SUgm20OSHh6IpFrxDPN6b28Gq9PyS0=", "id"=>"1", "book"=>{"price"=>"29.4", "title"=>"Im Norden nichts Neues", "published_at(1i)"=>"2006", "published_at(2i)"=>"2", "published_at(3i)"=>"10"}}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+  [4;36;1mBook Update (0.6ms)[0m   [0;1mUPDATE "books" SET "title" = 'Im Norden nichts Neues', "updated_at" = '2009-03-14 10:03:32' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/books/1
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-14 11:03:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#update (for 127.0.0.1 at 2009-03-14 11:04:02) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"EANGr0ElKWgy7SUgm20OSHh6IpFrxDPN6b28Gq9PyS0=", "id"=>"1", "book"=>{"price"=>"29.4", "title"=>"Im Norden nichts Neues", "published_at(1i)"=>"2006", "published_at(2i)"=>"3", "published_at(3i)"=>"10"}}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+  [4;35;1mBook Update (0.5ms)[0m   [0mUPDATE "books" SET "published_at" = '2006-03-10', "updated_at" = '2009-03-14 10:04:02' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/books/1
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-14 11:04:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-03-15 10:32:26) [GET]
+  [4;36;1mBook Load (0.8ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 49ms (View: 34, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-03-15 10:32:30) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 199ms (View: 193, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-03-15 10:32:31) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"EANGr0ElKWgy7SUgm20OSHh6IpFrxDPN6b28Gq9PyS0=", "book"=>{"price"=>"", "title"=>"", "published_at(1i)"=>"2009", "published_at(2i)"=>"3", "published_at(3i)"=>"15"}}
+Rendering template within layouts/books
+Rendering books/new
+Completed in 21ms (View: 5, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-03-15 10:33:10) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"EANGr0ElKWgy7SUgm20OSHh6IpFrxDPN6b28Gq9PyS0=", "book"=>{"price"=>"", "title"=>"", "published_at(1i)"=>"2009", "published_at(2i)"=>"3", "published_at(3i)"=>"15"}}
+Rendering template within layouts/books
+Rendering books/new
+Completed in 49ms (View: 12, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-03-15 10:33:13) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"EANGr0ElKWgy7SUgm20OSHh6IpFrxDPN6b28Gq9PyS0=", "book"=>{"price"=>"", "title"=>"", "published_at(1i)"=>"2009", "published_at(2i)"=>"3", "published_at(3i)"=>"15"}}
+Rendering template within layouts/books
+Rendering books/new
+Completed in 18ms (View: 5, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 11:21:59) [GET]
+  Parameters: {"id"=>"index"}
+  [4;36;1mBook Load (0.1ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Book with ID=index):
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/base.rb:1595:in `find_one'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/base.rb:1578:in `find_from_ids'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/base.rb:616:in `find'
+  app/controllers/books_controller.rb:16:in `show'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+  /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+  /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (43.9ms)
+Rendered rescues/_request_and_response (24.8ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-03-15 11:22:04) [GET]
+  [4;35;1mBook Load (0.5ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/books/]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 11:22:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 35ms (View: 27, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 11:22:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.4ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+
+ActionView::TemplateError (Object must be a Date, DateTime or Time object. #<BigDecimal:2216860,'0.294E2',8(8)> given.) on line #8 of app/views/books/show.html.erb:
+5: 
+6: <p>
+7:   <b>Price:</b>
+8:   <%=l @book.price %>
+9: </p>
+10: 
+11: <p>
+
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n/backend/simple.rb:49:in `localize'
+    /Users/hussein/.gem/ruby/1.8/gems/activesupport-2.3.1/lib/active_support/vendor/i18n-0.1.3/lib/i18n.rb:176:in `localize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/helpers/translation_helper.rb:24:in `l'
+    app/views/books/show.html.erb:8
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:18:in `show'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (61.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 11:22:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 11:26:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+
+ActionView::TemplateError (wrong number of arguments (1 for 0)) on line #13 of app/views/books/show.html.erb:
+10: 
+11: <p>
+12:   <b>Published at:</b>
+13:   <%=I18n.locale @book.published_at %>
+14: </p>
+15: 
+16: 
+
+    app/views/books/show.html.erb:13:in `locale'
+    app/views/books/show.html.erb:13
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:18:in `show'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (134.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 11:26:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 11:26:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 11:26:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 11:36:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 33ms (View: 21, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 11:40:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:23:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (13.8ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 555ms (View: 60, DB: 14) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:23:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 24ms (View: 14, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:23:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 62ms (View: 56, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:25:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:26:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:26:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:38:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 75ms (View: 45, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:38:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 53ms (View: 45, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:39:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 46ms (View: 15, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:39:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 93ms (View: 9, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:39:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:40:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:49:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 235ms (View: 228, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:54:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.4ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:54:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:59:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+
+ActionView::TemplateError (undefined method `format_number' for #<ActionView::Base:0x22141c8>) on line #8 of app/views/books/show.html.erb:
+5: 
+6: <p>
+7:   <b>Price:</b>
+8:   <%= format_number @book.price %>
+9: </p>
+10: 
+11: <p>
+
+    app/views/books/show.html.erb:8
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:18:in `show'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (229.3ms)
+Rendered rescues/_request_and_response (8.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 14:59:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.4ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+
+ActionView::TemplateError (undefined method `number_format' for #<ActionView::Base:0x2374374>) on line #8 of app/views/books/show.html.erb:
+5: 
+6: <p>
+7:   <b>Price:</b>
+8:   <%= number_format @book.price %>
+9: </p>
+10: 
+11: <p>
+
+    app/views/books/show.html.erb:8
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:18:in `show'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (180.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:01:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:08:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+
+ActionView::TemplateError (undefined method `number_format' for #<ActionView::Base:0x2439a34>) on line #8 of app/views/books/show.html.erb:
+5: 
+6: <p>
+7:   <b>Price:</b>
+8:   <%= number_format @book.price %>
+9:   <%= number_with_precision 12345.567 %>
+10: </p>
+11: 
+
+    app/views/books/show.html.erb:8
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:18:in `show'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (157.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:09:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.4ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 32ms (View: 21, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:09:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:14:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 19ms (View: 12, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:14:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+
+ActionView::TemplateError (undefined method `1.234.567,5' for class `ActionView::Base') on line #9 of app/views/books/show.html.erb:
+6: <p>
+7:   <b>Price:</b>
+8:   <%=  @book.price %><br />
+9:   <%= method number_with_delimiter 1234567.5 %>
+10: </p>
+11: 
+12: <p>
+
+    app/views/books/show.html.erb:9:in `method'
+    app/views/books/show.html.erb:9
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:18:in `show'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (149.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:15:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (1.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:20:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+
+ActionView::TemplateError (undefined method `23,50%' for class `ActionView::Base') on line #9 of app/views/books/show.html.erb:
+6: <p>
+7:   <b>Price:</b>
+8:   <%=  @book.price %><br />
+9:   <%= method number_to_percentage 23.5 %>
+10: </p>
+11: 
+12: <p>
+
+    app/views/books/show.html.erb:9:in `method'
+    app/views/books/show.html.erb:9
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/renderable.rb:36:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/template.rb:194:in `render_template'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:258:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:329:in `_render_with_layout'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_view/base.rb:255:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1237:in `render_for_file'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:941:in `render_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:179:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:173:in `respond'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:18:in `show'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:1318:in `perform_action_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/flash.rb:141:in `perform_action'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `send'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:523:in `process_without_filters'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/filters.rb:606:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:391:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/base.rb:386:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/routing/route_set.rb:433:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:88:in `dispatch'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:29:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/query_cache.rb:28:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/activerecord-2.3.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/reloader.rb:9:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/failsafe.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/dispatcher.rb:106:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/static.rb:27:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:42:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `each'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:36:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:59:in `process'
+    /Users/hussein/.gem/ruby/1.8/gems/actionpack-2.3.1/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:32:in `run'
+    /Users/hussein/.gem/ruby/1.8/gems/rails-2.3.1/lib/commands/server.rb:111
+
+Rendered rescues/_trace (168.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:21:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.4ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 23ms (View: 14, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:26:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:26:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:26:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 21ms (View: 14, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:26:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:26:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:26:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 20ms (View: 10, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:27:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:27:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:27:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.4ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 127ms (View: 120, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:27:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 132ms (View: 123, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:28:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:28:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.5ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 25ms (View: 13, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:28:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-03-15 15:28:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/books/1]

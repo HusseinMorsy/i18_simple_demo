@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @book.title %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=  number_to_currency @book.price %><br />
+</p>
+
+<p>
+  <b>Published at:</b>
+  <%=l @book.published_at, :format => :long %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=l @book.created_at, :format => :long %>
+</p>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
